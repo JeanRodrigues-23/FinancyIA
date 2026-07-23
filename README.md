@@ -1,3 +1,4 @@
+
 # FinancyIA 💰
 
 Sistema de controle financeiro pessoal aprimorado com IA, baseado no projeto Financy original feito "à mão".
