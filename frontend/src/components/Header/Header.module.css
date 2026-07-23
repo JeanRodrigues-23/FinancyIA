@@ -1,0 +1,55 @@
+.header {
+  background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 100%);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.logoIcon {
+  font-size: 1.75rem;
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.6));
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+}
+
+.logoIA {
+  color: var(--color-primary-light);
+  background: linear-gradient(135deg, #818CF8, #A78BFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tagline {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+@media (max-width: 600px) {
+  .tagline { display: none; }
+  .logoText { font-size: 1.25rem; }
+}

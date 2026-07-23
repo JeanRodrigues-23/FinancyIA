@@ -1,0 +1,81 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.erroConexao {
+  background: var(--color-gasto-bg);
+  border: 1px solid var(--color-gasto-border);
+  color: var(--color-gasto);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-weight: 500;
+}
+
+/* Layout de dois painéis lado a lado */
+.layoutPaineis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+.painel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.painelTitulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.graficoCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  flex: 1;
+}
+
+.historicoWrapper {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+}
+
+.footer {
+  text-align: center;
+  padding: var(--spacing-lg);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .layoutPaineis {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 0 var(--spacing-md); }
+  .main { padding: var(--spacing-md) 0; }
+}

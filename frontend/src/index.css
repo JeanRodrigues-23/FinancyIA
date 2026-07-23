@@ -1,0 +1,145 @@
+/* ==========================================
+   FinancyIA — Design System & Global Styles
+   ========================================== */
+
+/* Google Fonts: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ── CSS Custom Properties ── */
+:root {
+  /* Cores primárias */
+  --color-bg: #0A0E1A;
+  --color-bg-secondary: #111827;
+  --color-bg-card: #1A2235;
+  --color-bg-card-hover: #1F2D42;
+  --color-border: rgba(255, 255, 255, 0.08);
+
+  /* Cores de acento */
+  --color-primary: #6366F1;
+  --color-primary-light: #818CF8;
+  --color-primary-dark: #4F46E5;
+
+  --color-ganho: #22C55E;
+  --color-ganho-bg: rgba(34, 197, 94, 0.1);
+  --color-ganho-border: rgba(34, 197, 94, 0.2);
+
+  --color-gasto: #EF4444;
+  --color-gasto-bg: rgba(239, 68, 68, 0.1);
+  --color-gasto-border: rgba(239, 68, 68, 0.2);
+
+  --color-saldo: #6366F1;
+  --color-saldo-bg: rgba(99, 102, 241, 0.1);
+
+  /* Texto */
+  --color-text: #F9FAFB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #6B7280;
+
+  /* Tipografia */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Espaçamento */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Bordas */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-primary: 0 0 24px rgba(99, 102, 241, 0.25);
+  --shadow-glow-ganho: 0 0 24px rgba(34, 197, 94, 0.2);
+  --shadow-glow-gasto: 0 0 24px rgba(239, 68, 68, 0.2);
+
+  /* Transições */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: var(--radius-full); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+/* ── Links ── */
+a { color: var(--color-primary-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Inputs base ── */
+input, select, textarea {
+  font-family: var(--font-family);
+}
+
+/* ── Utility classes ── */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Animações ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 12px rgba(99, 102, 241, 0.2); }
+  50%       { box-shadow: 0 0 28px rgba(99, 102, 241, 0.5); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in { animation: fadeIn var(--transition-normal) both; }
+.animate-slide-up { animation: slideUp var(--transition-slow) both; }
